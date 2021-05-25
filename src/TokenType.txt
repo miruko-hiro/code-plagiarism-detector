@@ -1,0 +1,13 @@
+NormalTypeStart \/\/(.*?)\n NormalTypeEnd
+NormalTypeStart \/\*(.*?)\*\/ NormalTypeEnd
+NormalTypeStart \{|\} NormalTypeEnd
+
+TokenTypeStart [^a-zA-Z0-9]unsigned long long int|signed long long int|unsigned long long|signed long long|unsigned long int|signed long int|unsigned short int|signed short int|long long int|long double|long long|unsigned long|signed long|long int|unsigned int|signed int|unsigned short|signed short|short int|unsigned char|signed char|double|float|long|unsigned|int|short|char|_Bool|bool[^a-zA-Z0-9] TokenTypeEnd TokenSignStart T TokenSignEnd
+TokenTypeStart -?[0-9]+[.]?[0-9]* TokenTypeEnd TokenSignStart N TokenSignEnd
+TokenTypeStart <<=|>>= TokenTypeEnd TokenSignStart H TokenSignEnd
+TokenTypeStart \+\+|--|==|!=|>=|<=|&&|\|\||<<|>>|\+=|-=|\*=|\/=|%=|&=|\|=|\^=|-> TokenTypeEnd TokenSignStart D TokenSignEnd
+TokenTypeStart =|\+|-|\*|\/|\\|%|>|<|!|~|&|\||\^|\.|\,|\?|:|#|;|\[|\]|\(|\) TokenTypeEnd TokenSignStart S TokenSignEnd
+TokenTypeStart '(.*?)' TokenTypeEnd TokenSignStart S TokenSignEnd
+TokenTypeStart "(.*?)" TokenTypeEnd TokenSignStart S TokenSignEnd
+TokenTypeStart [^a-zA-Z0-9](for|while|do)[^a-zA-Z0-9] TokenTypeEnd TokenSignStart C TokenSignEnd
+TokenTypeStart [^a-zA-Z0-9]else if|auto|break|case|const|continue|default|else|enum|extern|goto|if|inline|register|restrict|return|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|_alignas|_alignof|_atomic|_bool|_complex|_decimal128|_decimal32|_decimal64|_generic|_imaginary|_noreturn|_static_assert|_thread_local|alignas|alignof|complex|imaginary|noreturn|static_assert|thread_local|asm|fortran|elif|endif|ifdef|ifndef|define|undef|include|line|error|pragma|defined|__has_c_attribute|_pragma|null[^a-zA-Z0-9] TokenTypeEnd TokenSignStart K TokenSignEnd
